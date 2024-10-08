@@ -50,9 +50,11 @@ allorad config set client keyring-backend os
 sed -i -e "s|^node *=.*|node = \"tcp://localhost:${ALLORA_PORT}657\"|" $HOME/.allorad/config/client.toml
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.allorad/config/genesis.json https://server-3.itrocket.net/testnet/allora/genesis.json
 wget -O $HOME/.allorad/config/addrbook.json  https://server-3.itrocket.net/testnet/allora/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="720d83b52611c64d119adfc4d08d2e85885d8c74@allora-testnet-seed.itrocket.net:27656"
