@@ -56,11 +56,13 @@ wget -O $HOME/.allorad/config/genesis.json https://server-3.itrocket.net/testnet
 wget -O $HOME/.allorad/config/addrbook.json  https://server-3.itrocket.net/testnet/allora/addrbook.json
 ```
 
-# set seeds and peers
+**set seeds and peers**
+```
 SEEDS="720d83b52611c64d119adfc4d08d2e85885d8c74@allora-testnet-seed.itrocket.net:27656"
 PEERS="a8cde2de31410d896668e53446495a4a68c4c24f@allora-testnet-peer.itrocket.net:27656,1e7bd22c2b6d8083a5ade376bd275d7f2acc8af5@66.206.8.130:26656,a6c8e1663045aa71a2c8d556bf3540a89e049d22@65.108.125.39:11656,1ec4d1954ce3631274d57a9b60f5ffb5f9e4d841@66.70.177.125:27656,c8f7c18f98ada342100c7bade62a28a244188951@204.29.146.8:26656,d3c79122924ff477e941ec0ca1ed775cfb01ca20@66.35.84.140:26656,140eced7d38fa5d9588403d9cc63522d52c8d221@65.21.230.12:26656,0f6b64fcd38872d18a78d89e090a5e6928883d52@8.209.116.116:26656,03549def142b0b473734ebdcc5693d0973fedf84@116.202.214.251:26656,714460df7c5a80827fd9bfc64c88c0fad55dcffd@116.202.50.44:34656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.allorad/config/config.toml
+```
 
 
 # set custom ports in app.toml
