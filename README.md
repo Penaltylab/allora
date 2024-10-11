@@ -76,15 +76,17 @@ s%:8546%:${ALLORA_PORT}546%g;
 s%:6065%:${ALLORA_PORT}065%g" $HOME/.allorad/config/app.toml
 ```
 
-# set custom ports in config.toml file
+**set custom ports in config.toml file**
+```
 sed -i.bak -e "s%:26658%:${ALLORA_PORT}658%g;
 s%:26657%:${ALLORA_PORT}657%g;
 s%:6060%:${ALLORA_PORT}060%g;
 s%:26656%:${ALLORA_PORT}656%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${ALLORA_PORT}656\"%;
 s%:26660%:${ALLORA_PORT}660%g" $HOME/.allorad/config/config.toml
+```
 
-# config pruning
+**config pruning**
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.allorad/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.allorad/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.allorad/config/app.toml
