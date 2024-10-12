@@ -98,7 +98,8 @@ sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.allorad/config/config
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.allorad/config/config.toml
 ```
 
-# create service file
+**create service file**
+```
 sudo tee /etc/systemd/system/allorad.service > /dev/null <<EOF
 [Unit]
 Description=Allora node
@@ -113,6 +114,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 # reset and download snapshot
 allorad tendermint unsafe-reset-all --home $HOME/.allorad
