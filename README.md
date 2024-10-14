@@ -126,7 +126,8 @@ if curl -s --head curl https://server-3.itrocket.net/testnet/allora/allora_2024-
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable allorad
 sudo systemctl restart allorad && sudo journalctl -u allorad -f
@@ -134,6 +135,8 @@ Automatic Installation
 pruning: custom: 100/0/50 | indexer: null
 
 source <(curl -s https://itrocket.net/api/testnet/allora/autoinstall/)
+```
+
 Create wallet
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 allorad keys add $WALLET
