@@ -143,8 +143,10 @@ Create wallet
 allorad keys add $WALLET
 ```
 
-# to restore exexuting wallet, use the following command
+**to restore exexuting wallet, use the following command**
+```
 allorad keys add $WALLET --recover
+```
 
 # save wallet and validator address
 WALLET_ADDRESS=$(allorad keys show $WALLET -a)
