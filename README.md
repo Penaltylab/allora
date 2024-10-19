@@ -162,8 +162,11 @@ source $HOME/.bash_profile
 allorad status 2>&1 | jq 
 ```
 
-# before creating a validator, you need to fund your wallet and check balance
-allorad query bank balances $WALLET_ADDRESS 
+**before creating a validator, you need to fund your wallet and check balance**
+```
+allorad query bank balances $WALLET_ADDRESS
+```
+
 Node Sync Status Checker
 #!/bin/bash
 rpc_port=$(grep -m 1 -oP '^laddr = "\K[^"]+' "$HOME/.allorad/config/config.toml" | cut -d ':' -f 3)
@@ -201,6 +204,7 @@ Commission max change rate
 0.01
 Website
 cd $HOME
+```
 # Create validator.json file
 echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(allorad comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
     \"amount\": \"1000000uallo\",
