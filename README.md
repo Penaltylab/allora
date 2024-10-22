@@ -213,13 +213,15 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(allor
 }" > validator.json
 ```
 
-# Create a validator using the JSON configuration
+**Create a validator using the JSON configuration**
+```
 allorad tx staking create-validator validator.json \
     --from $WALLET \
     --chain-id allora-testnet-1 \
 	--gas auto --gas-adjustment 1.5 \
 	
-Monitoring
+```
+
 If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
 
 Security
