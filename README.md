@@ -232,10 +232,12 @@ sudo ufw allow ${ALLORA_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node*
+```
 sudo systemctl stop allorad
 sudo systemctl disable allorad
 sudo rm -rf /etc/systemd/system/allorad.service
 sudo rm $(which allorad)
 sudo rm -rf $HOME/.allorad
 sed -i "/ALLORA_/d" $HOME/.bash_profile
+```
